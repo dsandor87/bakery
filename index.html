@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Bozó László      &mdash; Bakery and Pastry
+    <title>Bozó László &mdash; Bakery and Pastry
     </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,7 +30,12 @@
     <link rel="stylesheet" href="css/style.css">
 
 
-
+    <script type="text/javascript">
+      (function(){
+          emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+      })();
+    </script>
+  
     
   </head>
   <body class="bg-light">
@@ -226,7 +231,7 @@
                   <div class="tab-pane fade show active" id="pills-breakfast" role="tabpanel" aria-labelledby="pills-breakfast-tab">
                     <div class="d-block d-md-flex menu-food-item">
                       <div class="text order-1 mb-3">
-                        <img src="images/bread_1.jpg" alt="Friss kenyér">
+                        <img src="images/IMG_1828.jpg" alt="Friss kenyér">
                         <h3><a href="#">Francia Baguette</a></h3>
                         <p>Ropogós héjjal és puha belsővel készült tradicionális francia kenyér.</p>
                       </div>
@@ -237,7 +242,7 @@
         
                     <div class="d-block d-md-flex menu-food-item">
                       <div class="text order-1 mb-3">
-                        <img src="images/bread_2.jpg" alt="Magvas kenyér">
+                        <img src="images/IMG_2900.jpg" alt="Magvas kenyér">
                         <h3><a href="#">Magvas Kenyér</a></h3>
                         <p>Többféle magvakkal gazdagított, tápanyagokban gazdag kenyér.</p>
                       </div>
@@ -248,7 +253,7 @@
         
                     <div class="d-block d-md-flex menu-food-item">
                       <div class="text order-1 mb-3">
-                        <img src="images/bread_3.jpg" alt="Rozs kenyér">
+                        <img src="images/IMG_3225.jpg" alt="Rozs kenyér">
                         <h3><a href="#">Rozskenyér</a></h3>
                         <p>Klasszikus rozskenyér, mely tökéletes szendvicsekhez vagy önmagában is.</p>
                       </div>
@@ -259,7 +264,7 @@
         
                     <div class="d-block d-md-flex menu-food-item">
                       <div class="text order-1 mb-3">
-                        <img src="images/bread_4.jpg" alt="Teljes kiőrlésű kenyér">
+                        <img src="images/IMG_2900.jpg" alt="Teljes kiőrlésű kenyér">
                         <h3><a href="#">Teljes Kiőrlésű Kenyér</a></h3>
                         <p>Egészséges, rostokban gazdag teljes kiőrlésű kenyér.</p>
                       </div>
@@ -623,9 +628,13 @@
           </div>
         </div> <!-- .section -->
         
-        <div class="map-wrap" id="map"  data-aos="fade"></div>
+        <!-- <div class="map-wrap" id="map"  data-aos="fade"></div> -->
 
-
+        <iframe title="Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49141.15055298989!2d-0.06931282319843801!3d51.48645508886898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a81c5507b387%3A0x981ded0cf3b9dadf!2sThe%20O2!5e0!3m2!1sen!2suk!4v1588761759518!5m2!1sen!2suk" 
+        width="100%" 
+        height="700px" frameBorder="0" 
+         allowFullScreen
+         ></iframe>
         <footer class="ftco-footer">
           <div class="container">
             <div class="row">
@@ -696,8 +705,20 @@
     <script src="js/aos.js"></script>
     
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
 
     <script src="js/main.js"></script>
+    <script type="text/javascript">
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+  
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+          .then(function() {
+            alert('Üzenet sikeresen elküldve!');
+          }, function(error) {
+            alert('Hiba történt az üzenet küldésekor: ' + JSON.stringify(error));
+          });
+      });
+    </script>
   </body>
 </html>
