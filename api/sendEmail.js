@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
     return res.status(405).send({ message: "Only POST requests allowed" });
   }
 
-  const { email, subject, message } = req.body;
+  const { name, email, phone, message } = req.body;
 
   // Create a transporter object using SMTP transport
   const transporter = nodemailer.createTransport({
@@ -18,10 +18,13 @@ module.exports = async (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: email,
-    subject: subject,
-    text: message,
-    html: `<strong>${message}</strong>`,
+    to: process.env.EMAIL_USER, // Your email address to receive the contact form submissions
+    subject: "New Contact Form Submission",
+    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+    html: `<p><strong>Name:</strong> ${name}</p>
+           <p><strong>Email:</strong> ${email}</p>
+           <p><strong>Phone:</strong> ${phone}</p>
+           <p><strong>Message:</strong> ${message}</p>`,
   };
 
   try {
