@@ -2,6 +2,7 @@
   "name": "meal-master",
   "version": "1.0.0",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "nodemailer": "^6.7.2"
   }
 }
