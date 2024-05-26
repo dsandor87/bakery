@@ -7,6 +7,11 @@ module.exports = async (req, res) => {
 
   const { name, email, phone, message } = req.body;
 
+  // Validate the input
+  if (!name || !email || !phone || !message) {
+    return res.status(400).send({ message: "All fields are required" });
+  }
+
   // Create a transporter object using SMTP transport
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -31,7 +36,9 @@ module.exports = async (req, res) => {
     await transporter.sendMail(mailOptions);
     res.status(200).send({ message: "Email sent successfully" });
   } catch (error) {
-    console.error(error);
-    res.status(500).send({ message: "Error sending email", error });
+    console.error("Error sending email:", error);
+    res
+      .status(500)
+      .send({ message: "Error sending email", error: error.message });
   }
 };
