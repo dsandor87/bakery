@@ -62,15 +62,15 @@
              
           </div>
           <div class="col-2 col-md-6 text-center site-logo-wrap">
-            <a href="index.html" class="site-logo">Bozó</a>
+            <a href="index.html" class="small-logos">
+              <img id="site-logo" class="small-logo" src="images/bck1.png" alt="Site Logo">
+            </a>
           </div>
           <div class="col-5 col-md-3 text-right menu-burger-wrap">
             <a href="#" class="site-nav-toggle js-site-nav-toggle"><i></i></a>
-
           </div>
         </div>
-       
-      </header> <!-- site-header -->
+      </header>
       
       <div class="main-wrap " id="section-home">
 
@@ -752,7 +752,7 @@
     
 
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
-    <script>
+    <!-- <script>
       document.getElementById('contactForm').addEventListener('submit', async (e) => {
         e.preventDefault();
         const name = document.getElementById('name').value;
@@ -768,6 +768,16 @@
         });
         const result = await response.json();
         alert(result.message);
+      });
+    </script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const logoElement = document.getElementById('site-logo');
+
+        if (urlParams.get('v2') === 'true') {
+          logoElement.src = 'images/logo2-trs.png'; // Change to the path of the v2 logo
+        }
       });
     </script>
     

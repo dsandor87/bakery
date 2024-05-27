@@ -115,6 +115,10 @@ textarea.form-control {
   margin-bottom: 50px;
 }
 
+.scrolled-logo {
+  filter: invert(0);
+}
+
 .site-menu ul > li {
   list-style: none;
   visibility: hidden;
@@ -238,6 +242,9 @@ textarea.form-control {
 
 .site-header.scrolled .site-nav-toggle {
   top: -5px !important;
+}
+.different-logo {
+  filter: invert(0);
 }
 
 .site-header.awake {
@@ -1870,4 +1877,10 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
   }
+}
+
+.small-logo {
+  filter: invert(1);
+  max-width: 200px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
 }

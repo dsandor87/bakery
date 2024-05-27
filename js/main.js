@@ -62,7 +62,8 @@ AOS.init({
   $(window).scroll(function () {
     var $this = $(this),
       st = $this.scrollTop(),
-      navbar = $(".site-header");
+      navbar = $(".site-header"),
+      logo = $(".small-logo");
 
     if (st > 150) {
       if (!navbar.hasClass("scrolled")) {
@@ -77,12 +78,15 @@ AOS.init({
     if (st > 350) {
       if (!navbar.hasClass("awake")) {
         navbar.addClass("awake");
+        logo.addClass("different-logo");
+        logo.css("filter", "invert(0)"); // Change invert to 0
       }
     }
     if (st < 350) {
       if (navbar.hasClass("awake")) {
         navbar.removeClass("awake");
         navbar.addClass("sleep");
+        logo.css("filter", "invert(1)"); // Revert back to invert 1 if necessary
       }
     }
   });
